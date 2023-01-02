@@ -11,4 +11,8 @@ vscode:
     - eventyret.bootstrap-4-cdn-snippet
     - hookyqr.beautify
     - matt-rudge.auto-open-preview-panel
-   
+
+    - ms-python.isort
+    - ms-toolsai.jupyter-renderers
+    - ms-toolsai.jupyter-keymap
+    - ms-toolsai.jupyter

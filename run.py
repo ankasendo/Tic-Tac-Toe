@@ -13,7 +13,7 @@ for x in welcome_title:
     print(x, end='')
     sys.stdout.flush()
     sleep(0.1)
-    
+
 class Player:
     """
     Initiates a player class.
@@ -27,17 +27,6 @@ class Player:
         pass
 
 
-class ComputerPlayer(Player):
-    """
-    Specific kind of player that is going to be managed by the program.
-    """
-    def get_move(self, game):
-        """
-        Computer will choose a random cell from the board.
-        """
-        cell = random.choice(game.available_moves())
-        return cell
-    
 class ComputerPlayer(Player):
     """
     Specific kind of player that is going to be managed by the program.
@@ -103,7 +92,7 @@ class TicTacToe:
             print("| " + " | ".join(row) + " |")
 
 @staticmethod
-def print_board_nums():
+    def print_board_nums():
         """
         Show the number corrispondent to the cells and prints separators
         """
@@ -112,7 +101,7 @@ def print_board_nums():
         for row in num_board:
             print("| " + " | ".join(row) + " |")
 
-def available_moves(self):
+    def available_moves(self):
         """
         Defines which moves are still available in a list of indeces
         ["x", "x", "o"] -> [(0, "x"), (1, "x"), (2, "o")]
@@ -123,19 +112,19 @@ def available_moves(self):
                 moves.append(i)
         return moves
 
-def empty_cells(self):
+    def empty_cells(self):
         """
         Returns True if there are empty cells in the board.
          """
         return " " in self.board
 
-def num_empty_cells(self):
+    def num_empty_cells(self):
         """
         Count how many empty cells are in the baord
         """
         return self.board.count(" ")
 
-def make_move(self, cell, letter):
+    def make_move(self, cell, letter):
         """
         If the move is valid, then make the move and assign cell to letter
         then return True. If not valid, return False.
@@ -148,7 +137,7 @@ def make_move(self, cell, letter):
             return True
         return False
 
-def winner(self, cell, letter):
+    def winner(self, cell, letter):
         """
         Check if there is a winner.
         Checks for 3 in a row, column or diagonal.
