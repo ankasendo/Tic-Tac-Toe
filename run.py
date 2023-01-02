@@ -1,8 +1,7 @@
 import math
 import random
 import time
-import sys
-from pprint import pprint
+import os
 from time import sleep  # animation for welcome title
 
 # welcome title with aimation
@@ -11,15 +10,14 @@ welcome_title = "Welcome to the ultimate TIC TAC TOE Game!\n"
 
 for x in welcome_title:
     print(x, end='')
-    sys.stdout.flush()
     sleep(0.1)
 
-class Player:
-    """
-    Initiates a player class.
-    Each player in the game will be represented with X or O.
-    get_move function will allow all players to get their next move.
-    """
+    class Player:
+        """
+       Initiates a player class.
+       Each player in the game will be represented with X or O.
+       get_move function will allow all players to get their next move.
+       """
     def __init__(self, letter):
         self.letter = letter
 
@@ -37,10 +35,11 @@ class ComputerPlayer(Player):
         """
         cell = random.choice(game.available_moves())
         return cell
-    
+
+
 class HumanPlayer(Player):
     """
-    Specific class for the human .
+    Specific class for the human player.
     """
     def get_move(self, game):
         """
@@ -91,7 +90,7 @@ class TicTacToe:
         for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
             print("| " + " | ".join(row) + " |")
 
-@staticmethod
+    @staticmethod
     def print_board_nums():
         """
         Show the number corrispondent to the cells and prints separators
@@ -241,7 +240,7 @@ def play(game, x_player, o_player, print_game=True):
         time.sleep(0.8)
 
     if print_game:
-        print("It's a tie!")
+        print("It's a draw!")
         return None
 
 
@@ -268,9 +267,9 @@ def start_the_game():
     print("while the computer has the symbol O")
     print('')
     print("To continue, select a command with one of the following:")
-    print("'p' to play the game")
-    print("'r' to read the rules")
-    print("'q' To quit the game")
+    print("Press 'p' to play the game")
+    print("Press 'r' to read the rules")
+    print("Press 'q' To quit the game")
     while True:
         user_choice = input().strip().lower()
         if user_choice == 'r':
@@ -296,8 +295,8 @@ def main():
     """
     clear_screen()
     print('')
-    print("Welcome to Tic Tac Toe!")
-    print("What's you name?")
+    print("Welcome to ultimate Tic Tac Toe!")
+    print("Please enter your name:")
     name = input()
     print("------------------")
     print('')
