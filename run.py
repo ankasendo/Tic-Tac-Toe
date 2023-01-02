@@ -21,16 +21,16 @@ class Player:
       Initiates a player class. Each player in the game will be represented with an X or an O. 
       get_move function will allow all players to get their next move.
     """
-    def __init__(self, letter):
-        self.letter = letter
  
     def get_move(self, game):
         pass
 
 
 class ComputerPlayer(Player): """ Specific kind of player that is going to be managed by the program."""
+
 def __init__(self, letter):
         super().__init__(letter)
+
 def get_move(self, game):
          """
         Computer will choose a random cell from the board.
@@ -43,8 +43,6 @@ class HumanPlayer(Player):
     """
     Specific class for the human player.
     """
-    def __init__(self, letter):
-        super().__init__(letter)
 
     def get_move(self, game):
          """
@@ -118,6 +116,103 @@ def print_board_nums():
          """
         return " " in self.board
 
+def num_empty_cells(self):
+        """
+        Count how many empty cells are in the baord
+        """
+        return self.board.count(" ")
+def make_move(self, cell, letter):
+        """
+        If the move is valid, then make the move and assign cell to letter
+        then return True. If not valid, return False.
+        Function also checks for the winner after player has made a move.
+        """
+        if self.board[cell] == " ":
+            self.board[cell] = letter
+            if self.winner(cell, letter):
+                self.current_winner = letter
+            return True
+        return False
+def winner(self, cell, letter):
+        """
+        Check if there is a winner.
+        Checks for 3 in a row, column or diagonal.
+        """
+        # checks rows first
+        row_index = math.floor(cell / 3)
+        row = self.board[row_index*3: (row_index + 1)*3]
+        # If all this is true or else comes out as false
+        # check if that letter is in 3 spots in a row
+        if all([spot == letter for spot in row]):
+            return True
+        # If not true then we keep going
+        # check columns
+        col_index = cell % 3
+        column = [self.board[col_index+i*3] for i in range(3)]
+        if all([spot == letter for spot in column]):
+            return True
+
+ # checks diagonals
+        # checks only if cell is an even number (0, 2, 4, 6, 8)
+        # this are the only moves possible to win a diagonal
+
+        if cell % 2 == 0:  # if it's even
+            diagonal1 = [self.board[i] for i in [0, 4, 8]]  # left to right
+            if all([spot == letter for spot in diagonal1]):
+                return True
+            diagonal2 = [self.board[i] for i in [2, 4, 6]]  # right to left
+            if all([spot == letter for spot in diagonal2]):
+                return True
+        # if all this checks fail then there is no possible winner
+        return False
+
+def play(game, x_player, o_player, print_game=True):
+    """
+    Main function to play the game.
+    Iterate while the game has empty cells.
+    When winner is returned, breaks the loop.
+    Returns the winner if there is one or None for a tie.
+    """
+    if print_game:
+        game.print_board_nums()
+    letter = "X"  # starting letter
+    while game.empty_cells():
+        # get the move from the correct player
+        if letter == "O":
+            cell = o_player.get_move(game)
+        else:
+            cell = x_player.get_move(game)
+
+ # make a move
+        if game.make_move(cell, letter):
+            if print_game:
+                print(f"{letter} makes a move to cell {cell}")
+                game.print_board()
+                print("")  # empty line to separate visually
+                print("Visual board:")
+                mockup_board()
+                print("")  # empty line to separate visually
+
+            if game.current_winner:
+                if print_game:
+             print(letter + " is a winner!")
+            return letter  # returns the winner of the game
+
+            # after the move, alternate letters
+            if letter == "X":
+                letter = "O"
+            else:
+                letter = "X"
+        # add pause to allow user to read computer moves
+        time.sleep(0.8)
+    if print_game:
+        print("It's a draw!")
+
+if __name__ == "__main__":
+    x_player = HumanPlayer("X")
+    o_player = ComputerPlayer("O")
+    t = TicTacToe()
+    play(t, x_player, o_player, print_game=True)
 
 print(TicTacToe().print_board_nums())
 
