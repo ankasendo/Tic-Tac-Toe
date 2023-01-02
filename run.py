@@ -50,7 +50,7 @@ class HumanPlayer(Player):
         also checks if the cell on the board has already been used,
         if invalid or already used, will return an error.
         """
-        valid_cell = None
+    valid_cell = None
         value = None
         while not valid_cell:
             cell = input(self.letter + "'s turn. Input move (0-8):")
@@ -211,36 +211,92 @@ def play(game, x_player, o_player, print_game=True):
         print("It's a draw!")
         quit()
 
-
 def explain_game():
     print("")
-    print("Tic-tac-toe is a game in which two players take turns in drawing either an 'O' or an 'X' in one square of a grid consisting of nine squares. The winner is the first player to get three of the same symbols in a row, vertically, horizontally or diagonally.")
+    print("Tic-tac-toe is a game in which two players take turns in drawing")
+    print("either an 'O' or an 'X' in one square of a grid")
+    print("consisting of nine squares.")
+    print("The winner is the first player to get three of the same symbols")
+    print("in a row, vertically, horizontally or diagonally.")
     print("")
     print("Now press 'p' to play or 'q' to quit the game!")
 
-if __name__ == "__main__":
+
+def start_the_game():
+    """
+    Gives the user menu for info, start the game or quit.
+    """
     x_player = HumanPlayer("X")
     o_player = ComputerPlayer("O")
     t = TicTacToe()
-    print("Welcome to Tic Tac Toe!")
-    print("Please Enter your name:")
-    name = input()
-    print(f"Welcome {name}!")
-    print("To play press 'p'")
-    print("To read the rules press 'r'")
-    print("To quit the game press 'q'")
+    print('')
+    print("You have the X symbol assigned to you to play,")
+    print("while the computer has the symbol O")
+    print('')
+    print("To continue, select a command with one of the following:")
+    print("'p' to play the game")
+    print("'r' to read the rules")
+    print("'q' To quit the game")
     while True:
         user_choice = input().strip().lower()
         if user_choice == 'r':
+            clear_screen()
             explain_game()
         elif user_choice == 'p':
+            clear_screen()
             play(t, x_player, o_player, print_game=True)
+            return
         elif user_choice == 'q':
-            print(f"Thank you {name} for playing!")
-            quit()
+            clear_screen()
+            print('')
+            print("Thank you for playing!")
+            print('')
+            break
         else:
             print("Wrong input. Press 'p' to play or 'r' to read the rules.")
 
 
+def main():
+    """
+    Main function that calls the start and end of game.
+    """
+    clear_screen()
+    print('')
+    print("Welcome to Tic Tac Toe!")
+    print("What's you name?")
+    name = input()
+    print("------------------")
+    print('')
+    print(f"Welcome {name}!")
+    print('')
+    print("Would you like to play Tic Tac Toe?")
+    print("Enter 'y' for YES or 'n' for NO:")
+    user_choice = input().strip().lower()
+    if user_choice == 'y':
+        clear_screen()
+        start_the_game()
+        while True:
+            print("Would you like to play again?")
+            print("Enter 'y' for YES or 'n' for NO:")
+            user_choice = input().strip().lower()
+            if user_choice == 'y':
+                clear_screen()
+                start_the_game()
+            elif user_choice == 'n':
+                clear_screen()
+                print("Thank you for playing!")
+                break
+            else:
+                print("Invalid command. Press 'y' to start and 'n' to quit.")
+    elif user_choice == 'n':
+        clear_screen()
+        print("Thank you for playing!")
+        print("To restart the game:")
+        print("press Run program above the terminal window.")
+    else:
+        print("Invalid command. Press 'y' to start and 'n' to quit.")
 
 
+if __name__ == '__main__':
+    while True:
+        main()
