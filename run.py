@@ -196,6 +196,7 @@ def play(game, x_player, o_player, print_game=True):
             if game.current_winner:
                 if print_game:
              print(letter + " is a winner!")
+             quit()
             return letter  # returns the winner of the game
 
             # after the move, alternate letters
@@ -203,19 +204,42 @@ def play(game, x_player, o_player, print_game=True):
                 letter = "O"
             else:
                 letter = "X"
+
         # add pause to allow user to read computer moves
         time.sleep(0.8)
     if print_game:
         print("It's a draw!")
+        quit()
+
+
+def explain_game():
+    print("")
+    print("Tic-tac-toe is a game in which two players take turns in drawing either an 'O' or an 'X' in one square of a grid consisting of nine squares. The winner is the first player to get three of the same symbols in a row, vertically, horizontally or diagonally.")
+    print("")
+    print("Now press 'p' to play or 'q' to quit the game!")
 
 if __name__ == "__main__":
     x_player = HumanPlayer("X")
     o_player = ComputerPlayer("O")
     t = TicTacToe()
-    play(t, x_player, o_player, print_game=True)
-
-print(TicTacToe().print_board_nums())
-
+    print("Welcome to Tic Tac Toe!")
+    print("Please Enter your name:")
+    name = input()
+    print(f"Welcome {name}!")
+    print("To play press 'p'")
+    print("To read the rules press 'r'")
+    print("To quit the game press 'q'")
+    while True:
+        user_choice = input().strip().lower()
+        if user_choice == 'r':
+            explain_game()
+        elif user_choice == 'p':
+            play(t, x_player, o_player, print_game=True)
+        elif user_choice == 'q':
+            print(f"Thank you {name} for playing!")
+            quit()
+        else:
+            print("Wrong input. Press 'p' to play or 'r' to read the rules.")
 
 
 
