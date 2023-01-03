@@ -37,6 +37,12 @@ Tic Tac Toe is a game where two players each take turns in choosing either an 'X
 - I want to be able to see my scores
 - I want to be able to play the game again or quit easily 
 
+## Aims 
+
+- For visitors who visit the website to have a positive user experience, despite them not being greeted with much HTML and CSS styling.
+
+- For the game to be enjoyable and allow the users to win.
+
 ## Flow Chart
 To create the structure of the game, this diagram was created using [Lucid Charts](https://www.lucidchart.com/)
 ![Flow Chart](images/Flowchart.png)
@@ -65,12 +71,22 @@ After the game is ended in a win, lose or a draw, a game over message will appea
 ![screenshot](images/final.png)
 
 # Technology used 
-* Python
-* JavaScript provided in the Code Institute Template
-* HTML provided in the Code Institute Template
-* GitHub - Version control.
-* GitPod - IDE used to code the program and for some of the manual testing.
-* Heroku - Program deployment for the users to access it without deploy it themselves.
+- [Python](https://www.python.org/):
+    - Python is the core programming language used to write all of the code in this application to make it fully functional.
+- [GitHub](https://github.com/dashboard):
+    - Used to store code for the project after being pushed.
+- [Git](https://git-scm.com/):
+    - Used for version control by utilizing the GitPod terminal to commit to Git and push to GitHub.
+- [GitPod](https://gitpod.io/workspaces):
+    - Used as the development environment.
+- [Heroku](https://heroku.com/):
+    -Used to deploy my application.
+- [Lucid Chart](https://lucid.app/users/login#/login):
+    - Used to create my flow chart of the story.
+- [Pep8](https://pep8ci.herokuapp.com/#):
+    - Used to check my code against Pep8 requirements.
+- JavaScript provided in the Code Institute Template
+- HTML provided in the Code Institute Template
 
 # Testing
 Testing was conducted through out my entire project. Pep8 validator initialy showed some errors, but after few fixes the resullt came back with no issues. Initially, I could not use terminal output, as error was showing up, however, after deployment, and line indentation fixing, it all worked as expected.
