@@ -73,13 +73,13 @@ After the game is ended in a win, lose or a draw, a game over message will appea
 * Heroku - Program deployment for the users to access it without deploy it themselves.
 
 # Testing
-Testing was conducted through out my entire project. Pep8 validator initialy showed some errors, but after few fixes the resullt came back with no issues.
+Testing was conducted through out my entire project. Pep8 validator initialy showed some errors, but after few fixes the resullt came back with no issues. Initially, I could not use terminal output, as error was showing up, however, after deployment, and line indentation fixing, it all worked as expected.
 
 ![screenshot](images/pep8-ci-liner.png)
 ![screenshot](images/pep8-ci-liner-no%20errors.png)
 
 # Bugs 
-I had a few bugs in my code when playing the game, first one occured right after deployement where error message would show up after clicking 'y' to start the game. The problem was resolved by using PEP8 validator anf analising line by line. 
+I had a few bugs in my code when playing the game, first one occured right after deployement where error message would show up after clicking 'y' to start the game. The error message reffered to three lines on the code, however the problem was resolved by using PEP8 validator and analising code line by line. 
 
 
 # Deployment
@@ -96,6 +96,8 @@ Steps for deployment:
 * [W3 School](https://www.w3schools.com/) helped me with my research and understanding.
 * Youtube
 * [Am I Responsive](https://ui.dev/amiresponsive) to create the main image for README file.
+* [GeekFlare website](https://geekflare.com/tic-tac-toe-python-code/)
+* [GeekforGeeks website](https://www.geeksforgeeks.org/python-implementation-automatic-tic-tac-toe-game-using-random-number/)
 
 ## Python Libraries Used
 
