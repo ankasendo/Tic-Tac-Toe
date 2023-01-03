@@ -2,22 +2,14 @@ import math
 import random
 import time
 import os
-from time import sleep  # animation for welcome title
 
-# welcome title with aimation
 
-welcome_title = "Welcome to the ultimate TIC TAC TOE Game!\n"
-
-for x in welcome_title:
-    print(x, end='')
-    sleep(0.1)
-
-    class Player:
-        """
-       Initiates a player class.
-       Each player in the game will be represented with X or O.
-       get_move function will allow all players to get their next move.
-       """
+class Player:
+    """
+    Initiates a player class.
+    Each player in the game will be represented with X or O.
+    get_move function will allow all players to get their next move.
+    """
     def __init__(self, letter):
         self.letter = letter
 
