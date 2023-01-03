@@ -55,7 +55,7 @@ The user will be asked what their name is.
 
 
 ## Start game 
-After the user has entered their name a welcome message will appear and it will ask the user to type 'p' to play the game, a loading message will then appear saying 'game starting', the game board will then appear and ready for the user to play.
+After the user has entered their name a welcome message will appear and it will ask the user to type 'p' to play the game, a loading message will then appear saying 'game starting', the game board will then appear and ready for the user to play. Reference board is kept throughout the game for the purposes of better understaniding of the same. 
 
 ![screenshot](images/3%20reference%20board.png)
 
