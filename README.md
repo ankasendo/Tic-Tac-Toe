@@ -1,31 +1,32 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Portfolio project - 3 Python
 
-Welcome ankasendo,
+# Tic Tac Toe
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Tic Tac Toe is a python terminal game, which runs in the Code Institute mock terminal on Heroku
 
-## Reminders
+## Introduction
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Tic Tac Toe is a game where two players each take turns in choosing either an 'X' or an 'O' in one square of a grid consisting of nine squares, in this case the game is against the computer. The first player who gets 3 of the same letters('X' or 'O') wins the game this is achieved by having the same letters in horizontally, vertically or diagonally.
 
-## Creating the Heroku app
+[Click here for live version of my project](https://p3tic-tac-toe.herokuapp.com/)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+[Click here to check my GitHub repository](https://github.com/ankasendo/Tic-Tac-Toe)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+![AmIResponsive](/images/responsive.png)
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+# Table of contents
+1. [Features](#features)
+    * [Run programme](#run-programme)
+    * [Name input](#name-input)
+    * [Start game](#start-game)
+    * [Check win](#check-win)
+    * [Check tie](#check-tie)
+    * [Game over](#game-over)
+2. [User stories](#user-stories)
+3. [Technology used](#technology-used)
+4. [Testing](#testing)
+5. [Bugs](#bugs)
+6. [Future Features](#future-features)
+7. [Deployment](#deployemnt)
+8. [Credits](#credits)
+9. [Acknowledgement](#acknowledgement)
