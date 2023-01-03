@@ -108,4 +108,6 @@ Steps for deployment:
  I would like to thank;
  
  * The slack community (https://slack.com/intl/en-ie/https://slack.com/intl/en-ie/) which i can always rely on.
- * I would like to thank the assessment team for taking their time to look over my project.
+ * I would like to thank the assessment team for taking their time to look over my project, Code institute Tutors and Love Sanwiches guided project.
+ * Questions and answers by fellow students on Slack were heavily consulted.
+
