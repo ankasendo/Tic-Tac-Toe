@@ -89,7 +89,7 @@ After the game is ended in a win, lose or a draw, a game over message will appea
 - HTML provided in the Code Institute Template
 
 # Testing
-Testing was conducted through out my entire project. Pep8 validator initialy showed some errors, but after few fixes the resullt came back with no issues. Initially, I could not use terminal output, as error was showing up, however, after deployment, and line indentation fixing, it all worked as expected.
+Testing was conducted through out my entire project, mostly manually. Pep8 validator initialy showed some errors, but after few fixes the resullt came back with no issues. Initially, I could not use terminal output, as error was showing up, however, after deployment, and line indentation fixing, it all worked as expected.
 
 ![screenshot](images/pep8-ci-liner.png)
 ![screenshot](images/pep8-ci-liner-no%20errors.png)
