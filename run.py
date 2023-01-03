@@ -1,3 +1,4 @@
+"""importing modules"""
 import math
 import random
 import time
@@ -19,11 +20,11 @@ class Player:
 
 class ComputerPlayer(Player):
     """
-    Specific kind of player that is going to be managed by the program.
+    Player that is going to be managed by the program.
     """
     def get_move(self, game):
         """
-        Computer will choose a random cell from the board.
+        Computer choose random cell.
         """
         cell = random.choice(game.available_moves())
         return cell
@@ -31,13 +32,11 @@ class ComputerPlayer(Player):
 
 class HumanPlayer(Player):
     """
-    Specific class for the human player.
+    Class for the human player.
     """
     def get_move(self, game):
         """
-        Check if the input value is one of the valid cells value,
-        also checks if the cell on the board has already been used,
-        if invalid or already used, will return an error.
+        Checks if the input is valid value.
         """
         valid_cell = None
         value = None
@@ -49,13 +48,13 @@ class HumanPlayer(Player):
                     raise ValueError
                 valid_cell = True  # if no error found -> then must be valid
             except ValueError:
-                print("Invalid cell. Try again a cell number from 0-8.")
+                print("Invalid cell. Try again numbers from 0-8.")
         return value
 
 
 def mockup_board():
     """
-    Mockup board to keep visible during the game to facilitate UX
+    Board to keep visible during the game for easier understanding.
     """
     num_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
     for row in num_board:
@@ -64,7 +63,7 @@ def mockup_board():
 
 class TicTacToe:
     """
-    Class that defines the kind of game
+    Class defines the game
     """
     def __init__(self):
         """
@@ -95,7 +94,6 @@ class TicTacToe:
     def available_moves(self):
         """
         Defines which moves are still available in a list of indeces
-        ["x", "x", "o"] -> [(0, "x"), (1, "x"), (2, "o")]
         """
         moves = []
         for (i, cell) in enumerate(self.board):
@@ -148,9 +146,7 @@ class TicTacToe:
         if all([spot == letter for spot in column]):
             return True
 
-        # checks diagonals
         # checks only if cell is an even number (0, 2, 4, 6, 8)
-        # this are the only moves possible to win a diagonal
         if cell % 2 == 0:  # if it's even
             diagonal1 = [self.board[i] for i in [0, 4, 8]]  # left to right
             if all([spot == letter for spot in diagonal1]):
@@ -165,7 +161,7 @@ class TicTacToe:
 
 def clear_screen(numlines=100):
     """
-    Clears the console to simplify UX and clear visual clutter.
+    Clears the screen to simplify UX and clear visual clutter.
     numlines is an optional argument used only as a fall-back.
     """
     if os.name == "posix":
@@ -211,16 +207,16 @@ def play(game, x_player, o_player, print_game=True):
                 print('')
                 print(f"{letter} makes a move to cell {cell}")
                 game.print_board()
-                print("")  # empty line to separate visually
+                print("")  # empty line to separate
                 print("Reference board:")
                 mockup_board()
-                print("")  # empty line to separate visually
+                print("")  # empty line to separate
 
             if game.current_winner:
                 if print_game:
                     print(letter + " wins! \n")
                     print('')
-                return letter  # returns the winner of the game
+                return letter  # returns the winner
 
             # after the move, alternate letters
             if letter == "X":
